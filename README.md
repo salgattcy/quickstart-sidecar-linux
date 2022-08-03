@@ -2,15 +2,10 @@
 
 This repo provides a script that help install the Cyral Sidecar via linux packages.
 
-Please review the documentation for more detailed directions.
+Please review the [related Cyral documentation](https://cyral.com/docs/sidecars/linux/install)
+for more detailed directions.
 
-[Related Cyral Documentation](https://cyral.com/docs/sidecars/linux/install)
-
-## Usage
-
----
-
-**NOTE:** This script assumes that you have superuser privileges on the target machine.
+> **NOTE:** This script assumes that you have superuser privileges on the target machine.
 
 ---
 
@@ -33,7 +28,7 @@ in your environment, set them now:
 
     CYRAL_SIDECAR_VERSION: Sidecar binary version to be deployed, for instance: v2.32.2
 
-**IMPORTANT:** You must run the export commands as **superuser**!
+> **IMPORTANT:** You must run the export commands as **superuser**!
 
 On some OS, you may need to install [curl](https://curl.se/download.html) and [jq](https://stedolan.github.io/jq/download/) too.
 
@@ -51,7 +46,7 @@ If you have already downloaded the binaries and do not want to download them aga
 bash install-deb-rpm.sh --local_package=<binary_path>
 ```
 
-**IMPORTANT:** You must run the script as **superuser**!
+> **IMPORTANT:** You must run the script as **superuser**!
 
 ---
 
@@ -71,6 +66,6 @@ bash install-deb-rpm.sh
 
 ### Installation on Debian/Ubuntu using a binary that was already downloaded:
 
-```base
+```bash
 bash install-deb-rpm.sh --local_package=/tmp/cyral-sidecar-v2.26.1.deb
 ```
