@@ -8,12 +8,13 @@ Please review the documentation for more detailed directions.
 
 ## Usage
 
-******************************************************************************************
+---
 
-NOTE: This script assumes that you have superuser privileges on the target machine.
+**NOTE:** This script assumes that you have superuser privileges on the target machine.
 
-******************************************************************************************  
-Prerequisites:
+---
+
+## Prerequisites:
 
 When you ran the sidecar Generate function in the Cyral control plane UI, it provided a set 
 of export commands to set parameters needed by this script. If you have not set these parameters 
@@ -32,34 +33,44 @@ in your environment, set them now:
 
     CYRAL_SIDECAR_VERSION: Sidecar binary version to be deployed, for instance: v2.32.2
 
-IMPORTANT: You must run the export commands as superuser!
+**IMPORTANT:** You must run the export commands as **superuser**!
 
-On some OS, you may need to install curl (https://curl.se/download.html) and jq (https://stedolan.github.io/jq/download/) too.
+On some OS, you may need to install [curl](https://curl.se/download.html) and [jq](https://stedolan.github.io/jq/download/) too.
 
-------------------------------------------------------------------------------------------  
+---
 
-Usage:
+## Usage:
 
-bash install-deb-rpm.sh  
-
-If you have already downloaded the binaries and do not want to download them again, use the --local_package argument to provide the location of the downloaded binaries, as shown below:
-
-bash install-deb-rpm.sh --local_package=<binary_path>
-
-IMPORTANT: You must run the script as superuser!
-
-------------------------------------------------------------------------------------------  
-
-Arguments:
-
---local_package : specify path to an already-downloaded Cyral sidecar RPM/DEB package, and prevent the script from downloading a new one
-
-------------------------------------------------------------------------------------------  
-
-Example installation on RedHat/CentOS after executing commands:
-
+```bash
 bash install-deb-rpm.sh
+```
 
-Example installation on Debian/Ubuntu using a binary that was already downloaded:
+If you have already downloaded the binaries and do not want to download them again, use the `--local_package` argument to provide the location of the downloaded binaries, as shown below:
 
+```bash
+bash install-deb-rpm.sh --local_package=<binary_path>
+```
+
+**IMPORTANT:** You must run the script as **superuser**!
+
+---
+
+## Arguments:
+
+**--local_package**: specify path to an already-downloaded Cyral sidecar RPM/DEB package, and prevent the script from downloading a new one.
+
+---
+
+## Examples
+
+### Installation on RedHat/CentOS after executing commands:
+
+```bash
+bash install-deb-rpm.sh
+```
+
+### Installation on Debian/Ubuntu using a binary that was already downloaded:
+
+```base
 bash install-deb-rpm.sh --local_package=/tmp/cyral-sidecar-v2.26.1.deb
+```
