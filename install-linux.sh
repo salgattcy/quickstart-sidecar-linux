@@ -59,11 +59,11 @@ On some OS, you may need to install curl (https://curl.se/download.html) and jq 
 
 Usage:
 
-bash install-deb-rpm.sh  
+bash install-linux  
 
 If you have already downloaded the binaries and do not want to download them again, use the --local_package argument to provide the location of the downloaded binaries, as shown below:
 
-bash install-deb-rpm.sh --local_package=<binary_path>
+bash install-linux --local_package=<binary_path>
 
 IMPORTANT: You must run the script as superuser!
 
@@ -77,11 +77,11 @@ Arguments:
 
 Example installation on RedHat/CentOS after executing commands:
 
-bash install-deb-rpm.sh
+bash install-linux
 
 Example installation on Debian/Ubuntu using a binary that was already downloaded:
 
-bash install-deb-rpm.sh --local_package=/tmp/cyral-sidecar-v2.26.1.deb
+bash install-linux --local_package=/tmp/cyral-sidecar-v2.26.1.deb
 "
   exit
 }

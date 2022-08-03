@@ -1,4 +1,4 @@
-# quickstart-sidecar-rpm-deb
+# quickstart-sidecar-linux
 
 This repo provides a script that help install the Cyral Sidecar via linux packages.
 
@@ -37,13 +37,13 @@ On some OS, you may need to install [curl](https://curl.se/download.html) and [j
 ## Usage:
 
 ```bash
-bash install-deb-rpm.sh
+bash install-linux.sh
 ```
 
 If you have already downloaded the binaries and do not want to download them again, use the `--local_package` argument to provide the location of the downloaded binaries, as shown below:
 
 ```bash
-bash install-deb-rpm.sh --local_package=<binary_path>
+bash install-linux.sh --local_package=<binary_path>
 ```
 
 > **IMPORTANT:** You must run the script as **superuser**!
@@ -61,11 +61,11 @@ bash install-deb-rpm.sh --local_package=<binary_path>
 ### Installation on RedHat/CentOS after executing commands:
 
 ```bash
-bash install-deb-rpm.sh
+bash install-linux.sh
 ```
 
 ### Installation on Debian/Ubuntu using a binary that was already downloaded:
 
 ```bash
-bash install-deb-rpm.sh --local_package=/tmp/cyral-sidecar-v2.26.1.deb
+bash install-linux.sh --local_package=/tmp/cyral-sidecar-v2.26.1.deb
 ```
