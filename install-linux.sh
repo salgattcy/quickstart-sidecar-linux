@@ -363,7 +363,7 @@ fi
 if [ -z "$INSTALL_PACKAGE" ] ;
 then
   echo "Getting access to the CP"
-  TOKEN=$(curl --fail --no-progress-meter --request POST "https://$CYRAL_CONTROL_PLANE:8000/v1/users/oidc/token" -d grant_type=client_credentials -d client_id="$CYRAL_SIDECAR_CLIENT_ID" -d client_secret="$CYRAL_SIDECAR_CLIENT_SECRET" 2>&1)
+  TOKEN=$(curl --fail --silent --request POST "https://$CYRAL_CONTROL_PLANE:8000/v1/users/oidc/token" -d grant_type=client_credentials -d client_id="$CYRAL_SIDECAR_CLIENT_ID" -d client_secret="$CYRAL_SIDECAR_CLIENT_SECRET" 2>&1)
   if [[ $? -ne 0 ]] ; then
     echo "$TOKEN"
     exit 1
