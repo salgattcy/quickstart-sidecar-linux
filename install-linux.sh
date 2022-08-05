@@ -121,10 +121,6 @@ pre_update_tasks () { # double check echos
 }
 
 post_update_tasks () { 
-  # We need some environmental variables for the exporter
-  echo "API_ADDRESS=localhost:8069" >> /etc/default/cyral-sidecar-exporter
-  echo "SIDECAR_ID=${CYRAL_SIDECAR_ID}" >> /etc/default/cyral-sidecar-exporter
-
   # The port is wrong here so it needs to be corrected
   sudo sed -i "s/8050/8069/" /etc/default/cyral-push-client
 
@@ -363,7 +359,7 @@ fi
 if [ -z "$INSTALL_PACKAGE" ] ;
 then
   echo "Getting access to the CP"
-  TOKEN=$(curl --fail --no-progress-meter --request POST "https://$CYRAL_CONTROL_PLANE:8000/v1/users/oidc/token" -d grant_type=client_credentials -d client_id="$CYRAL_SIDECAR_CLIENT_ID" -d client_secret="$CYRAL_SIDECAR_CLIENT_SECRET" 2>&1)
+  TOKEN=$(curl --fail --silent --request POST "https://$CYRAL_CONTROL_PLANE:8000/v1/users/oidc/token" -d grant_type=client_credentials -d client_id="$CYRAL_SIDECAR_CLIENT_ID" -d client_secret="$CYRAL_SIDECAR_CLIENT_SECRET" 2>&1)
   if [[ $? -ne 0 ]] ; then
     echo "$TOKEN"
     exit 1
