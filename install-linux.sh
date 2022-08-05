@@ -121,10 +121,6 @@ pre_update_tasks () { # double check echos
 }
 
 post_update_tasks () { 
-  # We need some environmental variables for the exporter
-  echo "API_ADDRESS=localhost:8069" >> /etc/default/cyral-sidecar-exporter
-  echo "SIDECAR_ID=${CYRAL_SIDECAR_ID}" >> /etc/default/cyral-sidecar-exporter
-
   # The port is wrong here so it needs to be corrected
   sudo sed -i "s/8050/8069/" /etc/default/cyral-push-client
 
